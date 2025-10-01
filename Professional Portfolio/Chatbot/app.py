@@ -20,4 +20,4 @@ def ask():
     return render_template('index.html', user_input=input_text, response=response)  # Render the response
 
 if __name__ == "__main__":
-    app.run(debug=True)  # Run the application in debug mode; set to False for production
+    app.run(debug=False)  # Run the application in debug mode; set to False for production
