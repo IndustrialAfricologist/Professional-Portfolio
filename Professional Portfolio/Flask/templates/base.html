@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Project Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  <!-- Bootstrap CSS for styling -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Client Project Tracker</h1>
+        <a href="{{ url_for('create_or_edit_project') }}" class="btn btn-primary mb-3">Add New Project</a>  <!-- Button to add a new project -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-info">
+                    {{ messages[0] }}  <!-- Display flash messages if any -->
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}  <!-- Placeholder for content in child templates -->
+    </div>
+</body>
+</html>

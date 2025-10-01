@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .chat-container { max-width: 600px; margin: auto; }
+        .chat-box { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        .user-input { width: 100%; padding: 10px; }
+        .submit-btn { padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>FAQ Chatbot</h1>
+        <div class="chat-box">
+            {% if user_input %}
+                <p><strong>You:</strong> {{ user_input }}</p>
+                <p><strong>Bot:</strong> {{ response }}</p>
+            {% endif %}
+        </div>
+        <form method="POST" action="/ask">
+            <input type="text" name="question" class="user-input" placeholder="Ask a question..." required>
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+    </div>
+</body>
+</html>
